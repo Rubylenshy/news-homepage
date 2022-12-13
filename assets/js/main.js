@@ -1,4 +1,18 @@
 
+const menu_hamburger = document.querySelector(".hamburger.one");
+const close_hamburger = document.querySelector(".hamburger.two");
+const overlay = document.querySelector('.overlay')
+const hamburger_nav = document.querySelector(".mobile-navigation");
+
+menu_hamburger.addEventListener('click', function(){
+    hamburger_nav.classList.add('close');
+    overlay.style.display = 'block'
+})
+close_hamburger.addEventListener('click', function(){
+    hamburger_nav.classList.remove('close');
+    overlay.style.display = 'none'
+})
+
 const divNews = document.querySelector('.news')
 
 news("../news.json");

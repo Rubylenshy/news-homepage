@@ -1,3 +1,14 @@
+
+:root{
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+
+    /* Neutral */
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
 *{
     padding: 0;
     margin: 0;
@@ -8,21 +19,98 @@ a{
     color: inherit;
     text-decoration: none;
 }
+ul{
+    list-style-type: none;
+}
+nav img{
+    height: 30px;
+}
 .navbar-desktop{
     display: none;
 }
+
+
 .navbar-mobile{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 30px 15px;
+}
+.hamburger{
+    display: block;
+    width: 50px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+.hamburger-bar,
+.hamburger::before,
+.hamburger::after{
+    content: "";
+    display: block;
+    width: 90%;
+    height: 3px;
+    background-color: var(--very-dark-blue);
+    margin: 4px 2px;
+    transition: 0.4s;
+}
+.hamburger-bar{
+    height: 2px;
+}
+.hamburger.close::before{
+    transform: rotate(-45deg) translate(-5px,2px);
+}
+.hamburger.close::after{
+    transform: rotate(45deg) translate(-8px,-5px);
+}
+.hamburger.close .hamburger-bar{
+    opacity: 0;
+}
+.mobile-navigation{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    margin-left: 35%;
+    width: 65%;
+    height: 100vh;
+    background: var(--off-white);
+    text-align: left;
+    float: right;
+    transition: 0.4s;
+} 
+.mobile-navigation .hamburger{
+    height: 50px;
+    margin: 20px;
+    float: right;
+}
+.mobile-ul{
+    padding: 30px;
+    margin-top: 100px;
+}
+.mobile-ul li{
+    margin: 20px 0;
+    font-weight: 500;
+    font-size: 1.4em;
+}
+.mobile-navigation.close{
+    left: 0;
+}
+.overlay{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0, 0.5);
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
 }
 
 @media (min-width: 650px) {
     .navbar-desktop{
         display: flex;
     }
-    .navbar-desktop img{
-        height: 40px;
-    }
+    
     .navbar-mobile{
         display: none;
     }
