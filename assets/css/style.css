@@ -28,6 +28,9 @@ nav img{
 .navbar-desktop{
     display: none;
 }
+.container{
+    padding: 0 15px;
+}
 
 
 .navbar-mobile{
@@ -109,9 +112,21 @@ nav img{
 @media (min-width: 650px) {
     .navbar-desktop{
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10%;
+    }
+    .desktop-links{
+        display: flex;
+        justify-content: space-between;
+        min-width: 400px;
     }
     
     .navbar-mobile{
         display: none;
+    }
+    
+    .container{
+        padding: 0 10%;
     }
 }
