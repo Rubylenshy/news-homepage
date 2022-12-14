@@ -13,6 +13,14 @@ close_hamburger.addEventListener('click', function(){
     overlay.style.display = 'none'
 })
 
+// const header = document.querySelector('.hero-grid-box h1')
+// let headerText = header.textContent;
+// window.addEventListener('load', ()=>{
+//     for (let i = 0; i < headerText.length; i++) {
+//         headerText[0].style.animation = 'fade-in 1s'
+//     }
+// })
+
 const divNews = document.querySelector('.news')
 
 news("../news.json");
