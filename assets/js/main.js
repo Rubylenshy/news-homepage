@@ -27,6 +27,7 @@ async function news(file){
         let htmlNews = `<div class="new-headline">
                             <h3>${item.heading}</h3>
                             <p>${item.paragraph}</p>
+                            <hr>
                         </div>`;
         
         newNews += htmlNews;
@@ -34,4 +35,37 @@ async function news(file){
 
     divNews.innerHTML = newNews;
 
+    window.addEventListener('load', ()=>{
+        const headline = document.querySelectorAll('.new-headline')
+        
+        for (let i = 0; i < headline.length; i++) {
+            pages[0].addEventListener('click', ()=>{
+                pages[0].classList.add('active')
+                pages[1].classList.remove('active')
+                headline[3].style.display = 'none'
+                headline[4].style.display = 'none'
+                headline[5].style.display = 'none'
+                
+                headline[0].style.display = 'block'
+                headline[1].style.display = 'block'
+                headline[2].style.display = 'block'
+                
+            })
+            pages[1].addEventListener('click', ()=>{
+                pages[0].classList.remove('active')
+                pages[1].classList.add('active')
+                headline[0].style.display = 'none'
+                headline[1].style.display = 'none'
+                headline[2].style.display = 'none'
+                
+                headline[3].style.display = 'block'
+                headline[4].style.display = 'block'
+                headline[5].style.display = 'block'
+            })
+        }
+        
+    })
+    const pages = document.querySelectorAll('.pages div')
+
 }
+
